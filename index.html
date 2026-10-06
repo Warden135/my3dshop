@@ -173,6 +173,16 @@ nav ul a:after{background:var(--v)}
 #printy svg{width:100%;height:100%}
 #pchat{box-shadow:var(--sh)}
 .bub.me{background:var(--v)}
+.category-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.85rem;margin:1.6rem 0 1.2rem}
+.category-card{min-width:0;padding:.55rem;text-align:left;border:1px solid var(--bd);border-radius:12px;background:var(--bg2);color:var(--fg);cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s}
+.category-card:hover,.category-card[aria-pressed=true]{border-color:var(--v);box-shadow:0 5px 16px -12px var(--v);transform:translateY(-2px)}
+.category-card:focus-visible{outline:2px solid var(--v);outline-offset:3px}
+.category-art{display:block;overflow:hidden;border-radius:8px;background:var(--bg);aspect-ratio:1.58}
+.category-art svg{display:block;width:100%;height:100%}
+.category-name{display:block;margin:.5rem .25rem .05rem;font-size:.9rem;font-weight:650;line-height:1.25}
+.category-count{display:block;margin:0 .25rem .2rem;color:var(--mut);font-size:.75rem}
+@media(max-width:860px){.category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.category-card{padding:.4rem}.category-name{font-size:.82rem}}
 @media(max-width:860px){#hero{min-height:70vh}}
 @media(prefers-reduced-motion:reduce){.mq div,.track{animation:none}}
 </style>
@@ -209,6 +219,14 @@ nav ul a:after{background:var(--v)}
 
 <section id="shop"><div class="wrap">
 <h2 class="rv">The <span class="grad">Shop</span></h2><p class="sub rv">Every piece is designed in-house, printed to order and hand-finished.</p>
+<h3 style="font-size:1.05rem;margin-top:1.7rem">Explore by category</h3>
+<div class="category-grid" id="category-artwork" role="group" aria-label="Browse shop categories">
+<button class="category-card" type="button" data-category="Home Decor" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="decor-vase" x2="0" y2="1"><stop stop-color="#d6a77b"/><stop offset="1" stop-color="#9f684c"/></linearGradient></defs><circle cx="188" cy="32" r="22" fill="#e9d4bd" opacity=".55"/><path d="M0 120 Q65 102 120 120T240 117V150H0Z" fill="#d9c8b5" opacity=".45"/><path d="M120 40 C116 57 102 64 103 91 L97 119 Q119 132 143 119 L137 91 C137 64 123 57 120 40Z" fill="url(#decor-vase)" stroke="#80553f" stroke-width="2"/><path d="M107 91 Q120 98 137 91M103 101Q120 108 140 101M100 111Q120 118 141 111" fill="none" stroke="#efc9a2" stroke-width="2" opacity=".8"/><path d="M120 42Q120 21 105 11M120 41Q132 20 147 16M118 43Q102 32 91 32" fill="none" stroke="#587568" stroke-width="3" stroke-linecap="round"/><path d="M105 11Q89 9 91 24Q103 25 105 11M147 16Q161 13 162 27Q150 31 147 16M91 32Q76 26 72 39Q84 46 91 32" fill="#78917b"/></svg></span><span class="category-name">Home Decor</span><span class="category-count">3 pieces</span></button>
+<button class="category-card" type="button" data-category="Desk &amp; Office" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="desk-light" x2="1" y2="1"><stop stop-color="#d7e4ec"/><stop offset="1" stop-color="#a9c1d0"/></linearGradient></defs><path d="M0 108H240V150H0Z" fill="#d6e0e5"/><path d="M0 108H240" stroke="#8299a8" stroke-width="3"/><rect x="80" y="59" width="97" height="46" rx="5" fill="#7894a5"/><rect x="86" y="65" width="85" height="31" rx="3" fill="url(#desk-light)"/><path d="M112 105V116M148 105V116" stroke="#647d8e" stroke-width="4"/><rect x="29" y="80" width="42" height="25" rx="4" fill="#c58c5c"/><path d="M35 86H65M35 93H65" stroke="#f1d1af" stroke-width="2"/><path d="M46 79L50 45L55 79" fill="#e3a957" stroke="#a5783b" stroke-width="2"/><path d="M58 79L70 51L67 80" fill="#6685a0" stroke="#526c84" stroke-width="2"/><circle cx="198" cy="68" r="16" fill="#ebf2f5"/><path d="M198 51V84M181 68H215" stroke="#9fb7c4" stroke-width="4" stroke-linecap="round"/><path d="M194 105V84H202V105" fill="#7b99a9"/></svg></span><span class="category-name">Desk &amp; Office</span><span class="category-count">3 pieces</span></button>
+<button class="category-card" type="button" data-category="Toys &amp; Games" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="toy-dragon" x2="1" y2="1"><stop stop-color="#80a888"/><stop offset="1" stop-color="#426e62"/></linearGradient></defs><circle cx="190" cy="34" r="25" fill="#e8d7a8" opacity=".65"/><path d="M0 122Q56 103 112 121T240 118V150H0Z" fill="#d5ded0"/><path d="M46 103Q68 81 89 93Q103 101 113 88L125 75Q137 69 149 78L163 69L178 78L169 88L181 95L168 103Q141 104 130 94Q115 115 91 110L78 118H54Z" fill="url(#toy-dragon)" stroke="#3c6558" stroke-width="3" stroke-linejoin="round"/><path d="M138 76L133 51L151 69L162 48L160 75M68 105L61 120M95 108L93 122M144 98L149 115M164 97L175 108" fill="none" stroke="#3c6558" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M175 78L189 81L180 91L169 88Z" fill="#d37d61"/><circle cx="176" cy="81" r="2.5" fill="#f6f2e8"/><path d="M31 90L36 82M204 105L209 97M27 110L31 103" stroke="#c28d48" stroke-width="3" stroke-linecap="round"/></svg></span><span class="category-name">Toys &amp; Games</span><span class="category-count">3 pieces</span></button>
+<button class="category-card" type="button" data-category="Miniatures" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="mini-stone" x2="0" y2="1"><stop stop-color="#b9b6ad"/><stop offset="1" stop-color="#85867f"/></linearGradient></defs><path d="M0 121H240V150H0Z" fill="#d9d4ca"/><path d="M62 119V81L79 66V43L100 57V44L122 57V37L145 55V45L167 64V81L180 94V119Z" fill="url(#mini-stone)" stroke="#686d69" stroke-width="3" stroke-linejoin="round"/><path d="M73 78V92M94 66V81M117 66V82M141 64V82M161 81V96" stroke="#e9e1d3" stroke-width="4"/><path d="M102 119V99Q121 80 140 99V119Z" fill="#677b80" stroke="#596a70" stroke-width="2"/><path d="M111 119V103Q121 94 131 103V119" fill="#d9c6a4"/><path d="M181 119L192 105L204 119M42 119L50 109L58 119" fill="#9a9c8e"/><circle cx="119" cy="33" r="4" fill="#c39354"/></svg></span><span class="category-name">Miniatures</span><span class="category-count">2 pieces</span></button>
+<button class="category-card" type="button" data-category="Gifts" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="gift-box" x2="1" y2="1"><stop stop-color="#c97767"/><stop offset="1" stop-color="#9d514b"/></linearGradient></defs><circle cx="181" cy="36" r="24" fill="#e8d4be" opacity=".55"/><path d="M47 72H194V122H47Z" fill="url(#gift-box)" stroke="#814743" stroke-width="3" stroke-linejoin="round"/><path d="M39 62H202V79H39Z" fill="#d79e70" stroke="#a77550" stroke-width="2"/><path d="M112 63V122M111 62C86 61 77 48 84 42C94 35 108 47 112 62ZM114 62C118 43 136 34 143 43C149 52 134 61 114 62Z" fill="none" stroke="#f0d1a6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M56 85H103M56 94H94" stroke="#f2c1aa" stroke-width="2" opacity=".8"/><path d="M177 104L184 111L198 94" fill="none" stroke="#f4dfb8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 119Q68 112 102 119T222 117" fill="none" stroke="#c3b5a2" stroke-width="3"/></svg></span><span class="category-name">Gifts</span><span class="category-count">2 pieces</span></button>
+</div>
 <div class="tools glass">
 <div class="pills" id="pills" role="group" aria-label="Categories"></div>
 <input type="search" id="q" placeholder="Search products…" aria-label="Search products">
@@ -403,7 +421,14 @@ function renderShop(){
  <div class="row"><div class="price">${p.sale?`<s>${money(p.price*1.25)}</s> `:''}${money(p.price)}</div><div class="sw">${COLORS.slice(0,3).map(c=>`<i style="background:${c}" data-sw="${c}" class="${c===p.color?'on':''}" aria-label="Color ${c}"></i>`).join('')}</div></div>
  <button class="btn p" style="width:100%;justify-content:center;margin-top:.8rem" data-add="${p.id}" ${p.stock?'':'disabled'}>${p.stock?'Add to cart':'Sold out'}</button></article>`).join('');
 }
-$('#pills').addEventListener('click',e=>{const b=e.target.closest('.pill');if(!b)return;$$('#pills .pill').forEach(x=>x.classList.toggle('on',x===b));F.cat=b.dataset.c;renderShop()});
+function selectCategory(category){
+ F.cat=category;
+ $$('#pills .pill').forEach(x=>x.classList.toggle('on',x.dataset.c===category));
+ $$('#category-artwork [data-category]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.category===category)));
+ renderShop();
+}
+$('#pills').addEventListener('click',e=>{const b=e.target.closest('.pill');if(b)selectCategory(b.dataset.c)});
+$('#category-artwork').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(b)selectCategory(b.dataset.category)});
 $('#q').addEventListener('input',debounce(e=>{F.q=e.target.value.trim().toLowerCase();renderShop()}));
 $('#sort').onchange=e=>{F.sort=e.target.value;renderShop()};
 $('#pr').oninput=e=>{F.max=+e.target.value;$('#pv').textContent=F.max;renderShop()};
