@@ -1,5 +1,5 @@
-# my3dshop
-3d print shop is a single-page front-end demo for a 3D-printing storefront. It combines HTML, CSS, and JavaScript in one file and uses Three.js to display interactive 3D objects.
+# Printastic
+Printastic is a single-page front-end demo for a 3D-printing storefront. It combines HTML, CSS, and JavaScript in one file and uses Three.js to display interactive 3D objects.
 
 Features
 Product catalog with search, category filters, and sorting
