@@ -173,17 +173,51 @@ nav ul a:after{background:var(--v)}
 #printy svg{width:100%;height:100%}
 #pchat{box-shadow:var(--sh)}
 .bub.me{background:var(--v)}
-.category-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.85rem;margin:1.6rem 0 1.2rem}
-.category-card{min-width:0;padding:.55rem;text-align:left;border:1px solid var(--bd);border-radius:12px;background:var(--bg2);color:var(--fg);cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s}
-.category-card:hover,.category-card[aria-pressed=true]{border-color:var(--v);box-shadow:0 5px 16px -12px var(--v);transform:translateY(-2px)}
-.category-card:focus-visible{outline:2px solid var(--v);outline-offset:3px}
-.category-art{display:block;overflow:hidden;border-radius:8px;background:var(--bg);aspect-ratio:1.58}
-.category-art svg{display:block;width:100%;height:100%}
-.category-name{display:block;margin:.5rem .25rem .05rem;font-size:.9rem;font-weight:650;line-height:1.25}
-.category-count{display:block;margin:0 .25rem .2rem;color:var(--mut);font-size:.75rem}
-@media(max-width:860px){.category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:520px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.category-card{padding:.4rem}.category-name{font-size:.82rem}}
-@media(max-width:860px){#hero{min-height:70vh}}
+/* Calm, product-first storefront */
+body:before{content:none}
+#hero{min-height:0;padding:clamp(2.5rem,4vw,4rem) 0;background:#f1f4f6;color:#1f2937}
+#hero canvas,#fall,#try,.stats,.mq{display:none}
+#hero .wrap{min-width:0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);align-items:center;gap:clamp(2rem,6vw,5rem)}
+.hero-in{width:100%;min-width:0;max-width:620px}
+#hero .chip{background:#fff;color:var(--v);border:1px solid var(--bd);margin-bottom:1.2rem}
+#hero h1{font-size:clamp(2.8rem,5.4vw,4.7rem);line-height:1.02;max-width:11ch}
+#hero .sub{max-width:48ch;font-size:1.08rem;color:#64748b;overflow-wrap:anywhere}
+#hero .grad{color:var(--v)}
+#hero .trust{gap:.55rem}
+#hero .trust span{background:transparent;border:1px solid var(--bd);border-radius:8px}
+.hero-art{width:min(100%,520px);min-width:0;justify-self:end;aspect-ratio:1.1;border-radius:18px;overflow:hidden;background:#e8eceb}
+.hero-art svg{display:block;width:100%;height:100%}
+.tools{display:grid;grid-template-columns:minmax(200px,1fr) minmax(145px,180px) auto auto;gap:.7rem;align-items:center;margin:1.3rem 0 1.6rem;padding:0;background:transparent;border:0;box-shadow:none}
+.tools .pills{grid-column:1/-1;gap:.45rem}
+.pill{border-radius:7px;background:#fff}
+.pill.on{background:var(--v);border-color:var(--v)}
+.tools input[type=search],.tools select{width:100%;min-width:0;height:44px;border-radius:7px;background:#fff}
+.tools label{white-space:nowrap}
+.tools input[type=range]{accent-color:var(--v);vertical-align:middle}
+.grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,245px),1fr));gap:1rem;perspective:none}
+.card{overflow:hidden;padding:.7rem;transform:none!important;transform-style:flat;border-radius:12px;box-shadow:0 2px 10px -8px rgba(15,23,42,.4);transition:box-shadow .18s,border-color .18s}
+.card:hover{box-shadow:0 8px 24px -16px rgba(15,23,42,.48);border-color:#b5c3ce}
+.th{aspect-ratio:1.12;border-radius:8px;background:#f3f5f6;transform:none}
+.th svg{display:block;width:100%;height:100%}
+.card h3{font-size:1rem;margin:.75rem 0 .2rem}
+.card p{min-height:2.7em;line-height:1.5}
+.tag{top:1rem;left:1rem;border-radius:5px}
+.tag.s{border-radius:5px}
+.heart{top:.85rem;right:.85rem;border:1px solid var(--bd);box-shadow:0 1px 4px rgba(15,23,42,.08)}
+.card .btn{min-height:42px;border-radius:7px}
+.stars{letter-spacing:1px}
+header{top:0;margin-top:0}
+nav{min-height:62px}
+.ib{background:#fff}
+.btn.p,.btn.o{border-radius:7px}
+#printy{right:1.2rem;left:auto;bottom:1.2rem;width:auto;height:44px;padding:0 .9rem;border:1px solid var(--bd);border-radius:999px;background:#fff;box-shadow:0 4px 16px -10px rgba(15,23,42,.5);animation:none}
+#printy svg{display:none}
+#printy:after{content:"Need help?";font-size:.86rem;font-weight:600;color:var(--fg)}
+#pchat{right:1.2rem;left:auto;bottom:4.5rem}
+.utility-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+.utility-links .btn{width:auto;height:auto;min-height:38px;padding:.4rem .7rem;font-size:.8rem}
+@media(max-width:860px){#hero{min-height:0}#hero .wrap{grid-template-columns:minmax(0,1fr);gap:1.8rem}#hero h1{max-width:14ch}.hero-art{width:min(100%,560px);justify-self:start}.tools{grid-template-columns:1fr 1fr}.tools .pills{overflow-x:auto;flex-wrap:nowrap;padding:2px}.tools .pill{flex:none}.tools label{font-size:.8rem!important}}
+@media(max-width:520px){#hero{padding:2.5rem 0}#hero h1{max-width:12ch;font-size:clamp(2.35rem,10.8vw,3rem)}.tools{grid-template-columns:1fr}.tools .pills{grid-column:1}.tools label{white-space:normal}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}.card{padding:.5rem}.card p{font-size:.78rem}.card .row{align-items:flex-start;flex-direction:column}.sw{order:-1}.card .btn{padding:.6rem .5rem;font-size:.8rem}}
 @media(prefers-reduced-motion:reduce){.mq div,.track{animation:none}}
 </style>
 </head>
@@ -205,28 +239,18 @@ nav ul a:after{background:var(--v)}
 <div style="display:grid;gap:1.2rem;font-size:1.4rem;font-weight:700"><a href="#shop" data-close>Shop</a><a href="#studio" data-close>Custom Prints</a><a href="#how" data-close>How It Works</a><a href="#materials" data-close>Materials</a><a href="#reviews" data-close>Reviews</a><a href="#faq" data-close>FAQ</a></div></aside>
 
 <main id="top-anchor">
-<section id="hero"><div id="fall"></div><canvas id="heroC" aria-hidden="true"></canvas>
+<section id="hero">
 <div class="wrap"><div class="hero-in">
-<span class="chip glass" id="plabel">Printing... 0%</span><span id="try">👆 Try me: drag, click, double-click</span>
-<h1>Turn ideas into <span class="grad">physical objects</span>, layer by layer.</h1>
-<p class="sub">Layerly makes beautiful 3D printed decor, desk gear and toys — and prints your own designs with studio-grade precision.</p>
-<div class="cta"><a class="btn p" href="#shop" data-mag>Shop Now</a><a class="btn" href="#studio" data-mag>Get a Custom Quote</a></div>
-<div class="trust"><span class="glass">🚚 Free shipping over $50</span><span class="glass">⚡ Printed in 48h</span><span class="glass">↩ 30-day returns</span></div>
-<div class="stats"><div><b data-count="12400">0</b><small>Objects shipped</small></div><div><b data-count="4.9" data-dec="1">0</b><small>Average rating</small></div><div><b data-count="48">0</b><small>Hour turnaround</small></div></div>
-</div></div></section>
-
-<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+<span class="chip">Thoughtfully made, one layer at a time</span>
+<h1>Small-batch objects for <span class="grad">everyday living.</span></h1>
+<p class="sub">Discover considered home accents, desk essentials and playful pieces, printed to order in our studio.</p>
+<div class="cta"><a class="btn p" href="#shop" data-mag>Shop the collection</a><a class="btn" href="#studio" data-mag>Make it yours</a></div>
+<div class="trust"><span>Free shipping over $50</span><span>Made to order in 48h</span><span>30-day returns</span></div>
+</div><figure class="hero-art" role="img" aria-label="A sculptural leafy planter, printed in warm clay">
+<svg viewBox="0 0 520 470" role="img" aria-hidden="true" focusable="false"><defs><linearGradient id="hero-wall" x2="0" y2="1"><stop stop-color="#eef0ea"/><stop offset="1" stop-color="#dce4df"/></linearGradient><linearGradient id="hero-pot" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d59268"/><stop offset=".55" stop-color="#b96f50"/><stop offset="1" stop-color="#8d4d3d"/></linearGradient><linearGradient id="hero-leaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#779478"/><stop offset="1" stop-color="#3d6658"/></linearGradient><filter id="hero-shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="12"/></filter></defs><rect width="520" height="470" fill="url(#hero-wall)"/><circle cx="389" cy="113" r="77" fill="#f7f1df" opacity=".72"/><path d="M0 351H520V470H0Z" fill="#c8bdae" opacity=".6"/><path d="M0 354H520" stroke="#a99f90" stroke-width="2" opacity=".6"/><ellipse cx="265" cy="359" rx="123" ry="22" fill="#56534b" opacity=".23" filter="url(#hero-shadow)"/><g fill="none" stroke="#54705d" stroke-width="5" stroke-linecap="round"><path d="M263 249Q263 174 209 108"/><path d="M266 256Q286 173 335 105"/><path d="M258 252Q231 194 159 174"/><path d="M270 250Q314 195 385 171"/><path d="M261 254Q261 166 264 79"/></g><g fill="url(#hero-leaf)"><path d="M210 111Q161 48 143 92Q144 132 210 111Z"/><path d="M211 111Q225 52 264 77Q276 107 211 111Z"/><path d="M335 108Q345 48 386 68Q398 103 335 108Z"/><path d="M336 108Q285 52 271 88Q283 119 336 108Z"/><path d="M159 174Q101 126 91 166Q98 201 159 174Z"/><path d="M159 174Q161 119 197 135Q211 159 159 174Z"/><path d="M385 171Q414 111 445 143Q450 174 385 171Z"/><path d="M385 171Q333 128 320 163Q334 188 385 171Z"/><path d="M264 80Q227 25 264 20Q298 30 264 80Z"/><path d="M264 80Q287 23 311 48Q311 76 264 80Z"/></g><path d="M183 225Q260 244 337 225L322 339Q260 365 198 339Z" fill="url(#hero-pot)" stroke="#8b513e" stroke-width="2"/><ellipse cx="260" cy="226" rx="78" ry="17" fill="#e0a47a" stroke="#8b513e" stroke-width="2"/><ellipse cx="260" cy="226" rx="62" ry="10" fill="#5b4638"/><path d="M194 256Q260 274 328 256M191 278Q260 297 325 278M188 301Q260 322 323 301M196 326Q260 345 320 326" fill="none" stroke="#e7b390" stroke-width="4" opacity=".65"/><rect x="216" y="343" width="88" height="9" rx="4" fill="#9e5943"/></svg></figure></div></section>
 
 <section id="shop"><div class="wrap">
 <h2 class="rv">The <span class="grad">Shop</span></h2><p class="sub rv">Every piece is designed in-house, printed to order and hand-finished.</p>
-<h3 style="font-size:1.05rem;margin-top:1.7rem">Explore by category</h3>
-<div class="category-grid" id="category-artwork" role="group" aria-label="Browse shop categories">
-<button class="category-card" type="button" data-category="Home Decor" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="decor-vase" x2="0" y2="1"><stop stop-color="#d6a77b"/><stop offset="1" stop-color="#9f684c"/></linearGradient></defs><circle cx="188" cy="32" r="22" fill="#e9d4bd" opacity=".55"/><path d="M0 120 Q65 102 120 120T240 117V150H0Z" fill="#d9c8b5" opacity=".45"/><path d="M120 40 C116 57 102 64 103 91 L97 119 Q119 132 143 119 L137 91 C137 64 123 57 120 40Z" fill="url(#decor-vase)" stroke="#80553f" stroke-width="2"/><path d="M107 91 Q120 98 137 91M103 101Q120 108 140 101M100 111Q120 118 141 111" fill="none" stroke="#efc9a2" stroke-width="2" opacity=".8"/><path d="M120 42Q120 21 105 11M120 41Q132 20 147 16M118 43Q102 32 91 32" fill="none" stroke="#587568" stroke-width="3" stroke-linecap="round"/><path d="M105 11Q89 9 91 24Q103 25 105 11M147 16Q161 13 162 27Q150 31 147 16M91 32Q76 26 72 39Q84 46 91 32" fill="#78917b"/></svg></span><span class="category-name">Home Decor</span><span class="category-count">3 pieces</span></button>
-<button class="category-card" type="button" data-category="Desk &amp; Office" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="desk-light" x2="1" y2="1"><stop stop-color="#d7e4ec"/><stop offset="1" stop-color="#a9c1d0"/></linearGradient></defs><path d="M0 108H240V150H0Z" fill="#d6e0e5"/><path d="M0 108H240" stroke="#8299a8" stroke-width="3"/><rect x="80" y="59" width="97" height="46" rx="5" fill="#7894a5"/><rect x="86" y="65" width="85" height="31" rx="3" fill="url(#desk-light)"/><path d="M112 105V116M148 105V116" stroke="#647d8e" stroke-width="4"/><rect x="29" y="80" width="42" height="25" rx="4" fill="#c58c5c"/><path d="M35 86H65M35 93H65" stroke="#f1d1af" stroke-width="2"/><path d="M46 79L50 45L55 79" fill="#e3a957" stroke="#a5783b" stroke-width="2"/><path d="M58 79L70 51L67 80" fill="#6685a0" stroke="#526c84" stroke-width="2"/><circle cx="198" cy="68" r="16" fill="#ebf2f5"/><path d="M198 51V84M181 68H215" stroke="#9fb7c4" stroke-width="4" stroke-linecap="round"/><path d="M194 105V84H202V105" fill="#7b99a9"/></svg></span><span class="category-name">Desk &amp; Office</span><span class="category-count">3 pieces</span></button>
-<button class="category-card" type="button" data-category="Toys &amp; Games" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="toy-dragon" x2="1" y2="1"><stop stop-color="#80a888"/><stop offset="1" stop-color="#426e62"/></linearGradient></defs><circle cx="190" cy="34" r="25" fill="#e8d7a8" opacity=".65"/><path d="M0 122Q56 103 112 121T240 118V150H0Z" fill="#d5ded0"/><path d="M46 103Q68 81 89 93Q103 101 113 88L125 75Q137 69 149 78L163 69L178 78L169 88L181 95L168 103Q141 104 130 94Q115 115 91 110L78 118H54Z" fill="url(#toy-dragon)" stroke="#3c6558" stroke-width="3" stroke-linejoin="round"/><path d="M138 76L133 51L151 69L162 48L160 75M68 105L61 120M95 108L93 122M144 98L149 115M164 97L175 108" fill="none" stroke="#3c6558" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M175 78L189 81L180 91L169 88Z" fill="#d37d61"/><circle cx="176" cy="81" r="2.5" fill="#f6f2e8"/><path d="M31 90L36 82M204 105L209 97M27 110L31 103" stroke="#c28d48" stroke-width="3" stroke-linecap="round"/></svg></span><span class="category-name">Toys &amp; Games</span><span class="category-count">3 pieces</span></button>
-<button class="category-card" type="button" data-category="Miniatures" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="mini-stone" x2="0" y2="1"><stop stop-color="#b9b6ad"/><stop offset="1" stop-color="#85867f"/></linearGradient></defs><path d="M0 121H240V150H0Z" fill="#d9d4ca"/><path d="M62 119V81L79 66V43L100 57V44L122 57V37L145 55V45L167 64V81L180 94V119Z" fill="url(#mini-stone)" stroke="#686d69" stroke-width="3" stroke-linejoin="round"/><path d="M73 78V92M94 66V81M117 66V82M141 64V82M161 81V96" stroke="#e9e1d3" stroke-width="4"/><path d="M102 119V99Q121 80 140 99V119Z" fill="#677b80" stroke="#596a70" stroke-width="2"/><path d="M111 119V103Q121 94 131 103V119" fill="#d9c6a4"/><path d="M181 119L192 105L204 119M42 119L50 109L58 119" fill="#9a9c8e"/><circle cx="119" cy="33" r="4" fill="#c39354"/></svg></span><span class="category-name">Miniatures</span><span class="category-count">2 pieces</span></button>
-<button class="category-card" type="button" data-category="Gifts" aria-pressed="false"><span class="category-art"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><defs><linearGradient id="gift-box" x2="1" y2="1"><stop stop-color="#c97767"/><stop offset="1" stop-color="#9d514b"/></linearGradient></defs><circle cx="181" cy="36" r="24" fill="#e8d4be" opacity=".55"/><path d="M47 72H194V122H47Z" fill="url(#gift-box)" stroke="#814743" stroke-width="3" stroke-linejoin="round"/><path d="M39 62H202V79H39Z" fill="#d79e70" stroke="#a77550" stroke-width="2"/><path d="M112 63V122M111 62C86 61 77 48 84 42C94 35 108 47 112 62ZM114 62C118 43 136 34 143 43C149 52 134 61 114 62Z" fill="none" stroke="#f0d1a6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M56 85H103M56 94H94" stroke="#f2c1aa" stroke-width="2" opacity=".8"/><path d="M177 104L184 111L198 94" fill="none" stroke="#f4dfb8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 119Q68 112 102 119T222 117" fill="none" stroke="#c3b5a2" stroke-width="3"/></svg></span><span class="category-name">Gifts</span><span class="category-count">2 pieces</span></button>
-</div>
 <div class="tools glass">
 <div class="pills" id="pills" role="group" aria-label="Categories"></div>
 <input type="search" id="q" placeholder="Search products…" aria-label="Search products">
@@ -281,6 +305,7 @@ nav ul a:after{background:var(--v)}
 <footer><div class="wrap"><div class="fg"><div><div class="logo" style="color:var(--fg)">Layerly</div><p>Ideas, printed layer by layer.</p></div>
 <div><b style="color:var(--fg)">Shop</b><br><a href="#shop">All products</a><br><a href="#studio">Custom prints</a></div>
 <div><b style="color:var(--fg)">Help</b><br><a href="#faq">FAQ</a><br><a href="#materials">Materials</a></div>
+<div><b style="color:var(--fg)">More</b><div class="utility-links" id="utility-links"></div></div>
 <div><b style="color:var(--fg)">Pay with</b><br>VISA · Mastercard · Amex · PayPal</div></div>
 <p style="margin-top:2rem">© <span id="yr"></span> Layerly. Made with plastic and patience.</p></div></footer>
 <button class="ib" id="top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
@@ -341,49 +366,6 @@ function mkMat(color,mat){const m=MATS[mat]||MATS.PLA;return new THREE.MeshStand
 function lights(sc){sc.add(new THREE.AmbientLight(0xffffff,.45));const k=new THREE.DirectionalLight(0xffffff,1.1);k.position.set(3,4,5);sc.add(k);const r=new THREE.PointLight(0x22d3ee,1.4,20);r.position.set(-4,2,-3);sc.add(r);const o=new THREE.PointLight(0xff7a45,.8,20);o.position.set(3,-3,2);sc.add(o)}
 function disposeScene(sc){sc.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material){o.material.bumpMap&&o.material.bumpMap.dispose();o.material.dispose()}})}
 
-/* ---------- HERO SCENE ---------- */
-function heroScene(){
- const cv=$('#heroC');if(!HAS3)return;let r;
- try{r=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true})}catch(e){return}
- $('#fall').style.display='none';
- const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);cam.position.z=6;lights(sc);
- r.localClippingEnabled=true;sc.fog=new THREE.Fog(0x0b0b12,8,18);
- const SH=['vase','gear','knot','coil'],CL=[0x7c5cff,0x22d3ee,0xff7a45,0x34d399];
- let si=0,spin=0,vs=0,dg=0,lx=0,sx=0,built=reduce?1:0,t0=performance.now();
- const plane=new THREE.Plane(new THREE.Vector3(0,-1,0),99);
- const rg=s=>{if(s!=='vase')return geo(s);const p=[];for(let i=0;i<=120;i++){const t=i/120;p.push(new THREE.Vector2(.55+.4*Math.sin(t*3.2+.3)*(1-t*.25)+(i%2?.03:0),(t-.5)*2.6))}return new THREE.LatheGeometry(p,64)};
- const obj=new THREE.Mesh(rg('vase'),mkMat(0x7c5cff,'PLA'));const om=obj.material;om.clippingPlanes=[plane];om.side=THREE.DoubleSide;om.emissive=new THREE.Color(0x7c5cff);om.emissiveIntensity=.15;om.roughness=.35;om.metalness=.15;obj.scale.setScalar(1.15);sc.add(obj);
- const gt=(()=>{const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d'),q=g.createRadialGradient(64,64,0,64,64,64);q.addColorStop(0,'rgba(255,255,255,.9)');q.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=q;g.fillRect(0,0,128,128);return new THREE.CanvasTexture(c)})();
- const glow=new THREE.Sprite(new THREE.SpriteMaterial({map:gt,color:0x7c5cff,blending:THREE.AdditiveBlending,transparent:true,opacity:.45,depthWrite:false}));glow.scale.set(4.5,4.5,1);obj.add(glow);
- const sh=new THREE.Mesh(new THREE.PlaneGeometry(3,3),new THREE.MeshBasicMaterial({map:gt,color:0,transparent:true,opacity:.45,depthWrite:false}));sh.rotation.x=-Math.PI/2;sh.position.y=-2;sc.add(sh);
- const nz=new THREE.Mesh(new THREE.SphereGeometry(.06,12,12),new THREE.MeshBasicMaterial({color:0x22d3ee}));obj.add(nz);
- const lab=$('#plabel'),hint=$('#try'),hero=$('#hero');
- function hook(){obj.geometry.boundingBox||obj.geometry.computeBoundingBox();const b=obj.geometry.boundingBox,h=b.max.y-b.min.y;let k=1;
-  if(built&&lab.textContent[0]==='P')lab.textContent='Ready to ship ✓';
-  if(!built){k=Math.min(1,(performance.now()-t0)/4200);if(k>=1){built=1;lab.textContent='Ready to ship ✓';nz.visible=false}else{lab.textContent='Printing... '+Math.round(k*100)+'%';const a=k*140;nz.visible=true;nz.position.set(Math.cos(a)*.7,b.min.y+k*h,Math.sin(a)*.7)}}
-  plane.constant=built?99:obj.position.y+(b.min.y+k*h)*obj.scale.x;
-  if(!dg){spin+=vs;vs*=.95}sh.position.x=obj.position.x;
-  shapes.children.forEach(m=>{const u=m.userData;if(!u.h)u.h=m.position.clone();if(u.v){m.position.add(u.v);u.v.multiplyScalar(.94);m.position.lerp(u.h,.012)}})}
- const own=e=>!e.target.closest('a,button,input');
- hero.addEventListener('pointerdown',e=>{if(!own(e))return;dg=1;lx=sx=e.clientX;hint.style.opacity=0});
- addEventListener('pointermove',e=>{if(dg){const d=e.clientX-lx;lx=e.clientX;spin+=d*.012;vs=d*.012}});
- addEventListener('pointerup',e=>{if(!dg)return;dg=0;if(Math.abs(e.clientX-sx)<6)cycle()});
- hero.addEventListener('dblclick',e=>{if(own(e))shapes.children.forEach(m=>{m.position.copy(obj.position);m.userData.v=new THREE.Vector3((Math.random()-.5)*.35,(Math.random()-.5)*.35,Math.random()*.2)})});
- function cycle(){si=(si+1)%4;obj.geometry.dispose();obj.geometry=rg(SH[si]);[om.color,om.emissive].forEach(c=>c.setHex(CL[si]));glow.material.color.setHex(CL[si]);built=0;t0=performance.now()}
- const shapes=new THREE.Group();for(let i=0;i<(innerWidth<700?16:40);i++){const m=new THREE.Mesh(new THREE.IcosahedronGeometry(.07+Math.random()*.08,0),new THREE.MeshStandardMaterial({color:[0x22d3ee,0x7c5cff,0xff7a45][i%3],roughness:.4}));m.position.set((Math.random()-.5)*14,(Math.random()-.5)*8,(Math.random()-.5)*6-1);m.userData.s=Math.random()*2+.5;shapes.add(m)}sc.add(shapes);
- let mx=0,my=0,vis=true,run=false;
- const size=()=>{const w=cv.clientWidth,h=cv.clientHeight;r.setPixelRatio(Math.min(devicePixelRatio,2));r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()};size();addEventListener('resize',debounce(size,150));
- addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
- new IntersectionObserver(([e])=>{vis=e.isIntersecting;if(vis&&!run)loop()}).observe($('#hero'));
- function loop(){if(!vis){run=false;return}run=true;const t=performance.now()/1000,sy=Math.min(scrollY/innerHeight,2);
-  const wide=innerWidth>860;const tx=(wide?1.7:0)+mx*.8-sy*1.5,ty=-my*.6-sy*.6;
-  obj.position.x+=(tx-obj.position.x)*.05;obj.position.y+=(ty+Math.sin(t)*.12-obj.position.y)*.05;
-  obj.rotation.y=t*(reduce?0:.25)+mx*1.2+sy*2+spin;obj.rotation.x=my*.8+sy;obj.scale.setScalar(1+sy*.3);
-  hook();shapes.children.forEach(m=>{m.rotation.x+=.004*m.userData.s;m.rotation.y+=.006*m.userData.s;m.position.y+=Math.sin(t*m.userData.s)*.002});
-  r.render(sc,cam);requestAnimationFrame(loop)}
- loop();
-}
-
 /* ---------- 3D VIEWER (modal) ---------- */
 let viewer=null;
 function mkViewer(el,p,color,mat){
@@ -401,8 +383,32 @@ function mkViewer(el,p,color,mat){
  return{auto(v){auto=v},wire(v){wf=v;ap()},layers(v){lv=v;ap()},light(n){const L=sc.children,Q={Studio:[.45,0xffffff,0x22d3ee,0xff7a45],Sunset:[.3,0xffb347,0xff5e7e,0xffd166],Neon:[.2,0xb388ff,0x00ffd5,0xff2bd6]}[n];L[0].intensity=Q[0];L[1].color.setHex(Q[1]);L[2].color.setHex(Q[2]);L[3].color.setHex(Q[3])},shot(){r.render(sc,cam);const a=document.createElement('a');a.download='layerly-'+p.shape+'.png';a.href=r.domElement.toDataURL('image/png');a.click()},set(c,m){mesh.material.bumpMap&&mesh.material.bumpMap.dispose();mesh.material.dispose();mesh.material=mkMat(c,m);ap()},dispose(){alive=false;removeEventListener('pointermove',mv);removeEventListener('pointerup',up);disposeScene(sc);r.dispose();r.domElement.remove()}}
 }
 
-/* ---------- SVG THUMB (layered print look) ---------- */
-function thumb(c,label='Product preview'){let s='';for(let i=0;i<9;i++){const rx=16+16*Math.sin((i+1)/10*Math.PI);s+=`<rect x="${50-rx}" y="${84-i*8}" width="${rx*2}" height="7" rx="3" fill="${c}" opacity="${.5+i*.06}"/>`}return`<svg viewBox="0 0 100 100" role="img" aria-label="${label}">${s}</svg>`}
+/* ---------- PRODUCT ARTWORK ---------- */
+const ART=[
+`<g fill="none" stroke="#456c53" stroke-width="4" stroke-linecap="round"><path d="M180 151Q173 108 132 75M179 151Q204 98 240 78M177 149Q130 121 99 125M184 147Q227 128 260 120"/></g><g fill="#718f6d"><path d="M133 76Q91 39 88 73Q101 98 133 76Z"/><path d="M133 76Q139 34 167 49Q171 70 133 76Z"/><path d="M240 78Q252 38 278 53Q280 76 240 78Z"/><path d="M240 78Q202 42 191 67Q202 89 240 78Z"/><path d="M99 125Q55 99 51 129Q68 150 99 125Z"/><path d="M99 125Q105 91 128 104Q134 121 99 125Z"/><path d="M260 120Q290 86 307 108Q308 130 260 120Z"/></g><path d="M125 159Q180 175 235 159L222 246Q180 264 138 246Z" fill="url(#item)" stroke="#855842" stroke-width="3"/><ellipse cx="180" cy="160" rx="56" ry="14" fill="#d99c73" stroke="#855842" stroke-width="3"/><ellipse cx="180" cy="160" rx="43" ry="8" fill="#514338"/><path d="M132 188Q180 201 228 188M130 207Q180 220 226 207M128 226Q180 239 224 226" fill="none" stroke="#f0c29e" stroke-width="4" opacity=".65"/>`,
+`<path d="M179 79C177 105 151 116 153 159L133 238Q179 260 227 238L207 159C209 116 183 105 181 79Z" fill="url(#item)" stroke="#855842" stroke-width="3"/><ellipse cx="180" cy="80" rx="15" ry="6" fill="#875640"/><path d="M157 141Q180 150 203 141M151 160Q180 170 209 160M146 181Q180 192 214 181M141 203Q180 214 219 203M138 225Q180 236 222 225" fill="none" stroke="#f5d8b7" stroke-width="3" opacity=".65"/>`,
+`<path d="M51 235H310" stroke="#a8aca4" stroke-width="6" stroke-linecap="round"/><path d="M73 239V255M289 239V255" stroke="#8d8d82" stroke-width="5"/><circle cx="180" cy="123" r="70" fill="#e5b976" opacity=".28"/><circle cx="180" cy="123" r="54" fill="none" stroke="#d69a59" stroke-width="18"/><circle cx="180" cy="123" r="48" fill="none" stroke="#fff6d9" stroke-width="5"/><path d="M175 178V226M185 178V226" stroke="#8d7358" stroke-width="5"/><path d="M143 229H217L231 239H129Z" fill="#8d7358"/><path d="M67 234H296" stroke="#f6e5c7" stroke-width="2" opacity=".8"/>`,
+`<path d="M66 199H298V242H66Z" fill="#b77b55" stroke="#87563e" stroke-width="3"/><path d="M58 188H306V205H58Z" fill="#d39a6e" stroke="#87563e" stroke-width="3"/><path d="M90 205V235M148 205V235M207 205V235M267 205V235" stroke="#edc7a0" stroke-width="3"/><path d="M84 185V111Q84 99 96 99H151Q163 99 163 111V185Z" fill="url(#item)" stroke="#855842" stroke-width="3"/><path d="M95 122H151M95 140H151M95 158H151" stroke="#f0c29e" stroke-width="3"/><path d="M108 99L117 48L126 99M132 99L147 59L143 99" fill="#52758d" stroke="#405d70" stroke-width="3" stroke-linejoin="round"/><path d="M225 182V76M250 182V93M275 182V120" stroke="#6a8190" stroke-width="8" stroke-linecap="round"/><circle cx="225" cy="70" r="7" fill="#c88955"/><circle cx="250" cy="87" r="7" fill="#c88955"/><circle cx="275" cy="114" r="7" fill="#c88955"/>`,
+`<path d="M112 219L138 134Q180 103 221 134L248 219Z" fill="#9c785d" stroke="#6e5646" stroke-width="4" stroke-linejoin="round"/><path d="M135 143Q178 116 218 143L230 194H125Z" fill="url(#item)" stroke="#f0e4d0" stroke-width="3"/><rect x="143" y="57" width="73" height="135" rx="12" transform="rotate(-8 143 57)" fill="#313a40" stroke="#667983" stroke-width="4"/><rect x="151" y="68" width="57" height="107" rx="6" transform="rotate(-8 151 68)" fill="#dce8e9"/><circle cx="181" cy="183" r="4" fill="#aebfc1"/>`,
+`<path d="M90 228H268" stroke="#b7aca0" stroke-width="6" stroke-linecap="round"/><path d="M125 213V182Q125 153 155 153H203Q233 153 233 182V213" fill="none" stroke="#658b91" stroke-width="12" stroke-linecap="round"/><path d="M142 213V185Q142 169 158 169H200Q216 169 216 185V213" fill="none" stroke="#9bb8b2" stroke-width="7" stroke-linecap="round"/><path d="M100 213V176Q100 137 138 137" fill="none" stroke="#527886" stroke-width="6"/><path d="M255 213V170Q255 132 218 132" fill="none" stroke="#527886" stroke-width="6"/><path d="M113 213H241L231 236H123Z" fill="url(#item)" stroke="#405f66" stroke-width="3"/><circle cx="177" cy="224" r="7" fill="#d8ece4"/>`,
+`<path d="M85 207Q104 178 135 188Q154 198 166 174L183 142Q202 126 225 139L245 122L269 137L253 153L278 169L255 185Q219 190 199 169Q178 209 144 211L127 230H96Z" fill="url(#item)" stroke="#3e675b" stroke-width="4" stroke-linejoin="round"/><path d="M202 142L194 105L220 132L239 101L235 142M122 207L111 236M153 207L151 238M215 182L226 212M246 177L266 198" fill="none" stroke="#3e675b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M266 137L292 146L276 164L254 153Z" fill="#d2775f"/><circle cx="269" cy="144" r="4" fill="#f7ebcf"/><path d="M90 239H280" stroke="#b6aa91" stroke-width="5" stroke-linecap="round"/>`,
+`<g fill="url(#item)" stroke="#6d5740" stroke-width="4"><circle cx="126" cy="173" r="56"/><circle cx="226" cy="173" r="56"/><circle cx="177" cy="105" r="40"/></g><g fill="#f2ede1" stroke="#8b765d" stroke-width="3"><circle cx="126" cy="173" r="18"/><circle cx="226" cy="173" r="18"/><circle cx="177" cy="105" r="14"/></g><path d="M72 126L87 130L84 145L68 146M118 117L124 101L138 108L137 124M172 65L176 48L190 52L191 67M220 113L231 102L241 113L234 127M270 151L288 156L283 170L266 168M217 226L225 241L211 249L201 237M112 228L100 242L87 232L97 219M69 177L52 181L48 166L64 158" fill="url(#item)"/>`,
+`<defs><pattern id="board8" width="42" height="42" patternUnits="userSpaceOnUse"><rect width="42" height="42" fill="#e8d7bc"/><path d="M0 0H21V21H0ZM21 21H42V42H21Z" fill="#75665a"/></pattern></defs><path d="M69 200L178 143L294 200L181 259Z" fill="url(#board8)" stroke="#67594e" stroke-width="4"/><path d="M69 200V218L181 280V259ZM294 200V218L181 280V259Z" fill="#755f4c" stroke="#67594e" stroke-width="3"/><path d="M139 190V125Q139 106 154 106Q169 106 169 125V174M203 205V157Q203 139 217 139Q231 139 231 157V190M101 211V180Q101 166 113 166Q125 166 125 180V198" fill="#f1e4cf" stroke="#826a55" stroke-width="5" stroke-linejoin="round"/><path d="M146 105L154 87L162 105M209 139L217 122L225 139M106 166L113 151L120 166" fill="#c8a77c"/>`,
+`<path d="M80 198L175 145L279 198L180 253Z" fill="#d5e5e1" stroke="#78918b" stroke-width="4"/><path d="M180 158L212 180L180 198L146 180Z" fill="#9bd0c7"/><path d="M80 198L146 180L180 198L113 220Z" fill="#7dbbb7"/><path d="M212 180L279 198L246 220L180 198Z" fill="#b8d3ca"/><path d="M175 148L159 86L188 48L232 73L212 135Z" fill="url(#item)" stroke="#477a83" stroke-width="4" stroke-linejoin="round"/><path d="M188 48L190 113L159 86ZM188 48L232 73L190 113ZM232 73L212 135L190 113ZM159 86L190 113L175 148Z" fill="#eaf8f2" opacity=".52" stroke="#fff" stroke-width="2"/><path d="M119 239H242" stroke="#78918b" stroke-width="4" stroke-linecap="round"/>`,
+`<path d="M82 222L108 193V120L140 139V105L171 126V88L204 116V102L235 131V190L264 222Z" fill="url(#item)" stroke="#655f57" stroke-width="4" stroke-linejoin="round"/><path d="M99 133L119 147V181H99ZM147 117L166 131V165H147ZM183 110L203 126V159H183ZM216 139L237 156V184H216Z" fill="#e3d4b9" stroke="#776d5f" stroke-width="3"/><path d="M151 222V183Q174 153 198 183V222Z" fill="#5d7277" stroke="#574f49" stroke-width="3"/><path d="M164 222V190L175 177L186 190V222" fill="#dec29a"/><path d="M120 223H226" stroke="#ead7b3" stroke-width="5"/>`,
+`<ellipse cx="180" cy="239" rx="84" ry="20" fill="#82735d"/><path d="M102 238Q180 255 258 238L244 258Q180 277 116 258Z" fill="#687777" stroke="#505c5c" stroke-width="3"/><path d="M174 204L144 164L151 126L176 97L205 105L222 137L207 169L190 204Z" fill="#bd956b" stroke="#745f4b" stroke-width="4" stroke-linejoin="round"/><path d="M146 133L140 100L164 116M194 108L215 84L216 123" fill="#78898b" stroke="#576767" stroke-width="4" stroke-linejoin="round"/><path d="M151 135L180 119L209 136L199 168L177 181L154 164Z" fill="url(#item)" stroke="#665443" stroke-width="3"/><path d="M175 181L153 207L163 225M194 176L213 206L200 226" fill="none" stroke="#80664d" stroke-width="10" stroke-linecap="round"/><path d="M137 140L113 176L141 190" fill="none" stroke="#658080" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>`,
+`<ellipse cx="180" cy="247" rx="90" ry="16" fill="#b9a998" opacity=".5"/><path d="M92 116H268V224H92Z" fill="url(#item)" stroke="#865145" stroke-width="4" stroke-linejoin="round"/><path d="M81 101H279V125H81Z" fill="#d7a879" stroke="#a77550" stroke-width="3"/><path d="M166 102V224M166 102C125 99 112 78 126 63C143 48 164 69 170 100M170 100C180 67 211 50 226 66C237 83 211 100 170 100Z" fill="none" stroke="#f0d6ad" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="223" cy="178" r="23" fill="none" stroke="#f2d6ad" stroke-width="4"/><circle cx="223" cy="178" r="5" fill="#f2d6ad"/><path d="M108 144H148M108 158H148" stroke="#f2c3a8" stroke-width="3"/>`,
+`<path d="M91 146H269V231H91Z" fill="url(#item)" stroke="#795744" stroke-width="4" stroke-linejoin="round"/><path d="M79 130H281V153H79Z" fill="#e1c08f" stroke="#9a7955" stroke-width="3"/><path d="M164 132V231" stroke="#f5e2c0" stroke-width="10"/><path d="M163 132C125 130 115 111 130 96C145 82 160 105 166 130M167 130C173 99 201 83 217 98C230 113 204 130 167 130Z" fill="none" stroke="#f5e2c0" stroke-width="7" stroke-linecap="round"/><circle cx="116" cy="183" r="7" fill="#fff1d3"/><circle cx="244" cy="183" r="7" fill="#fff1d3"/>`,
+`<path d="M99 157H261V227H99Z" fill="url(#item)" stroke="#7a5740" stroke-width="4" stroke-linejoin="round"/><path d="M85 142H275V162H85Z" fill="#d6b180" stroke="#9b7854" stroke-width="3"/><path d="M161 144V227" stroke="#f0ddb8" stroke-width="8"/><path d="M161 144C126 141 119 120 133 108C146 96 158 119 164 142M165 142C172 113 197 98 210 111C222 124 198 141 165 142Z" fill="none" stroke="#f0ddb8" stroke-width="7" stroke-linecap="round"/><path d="M101 183H142M101 196H142" stroke="#f4d7ac" stroke-width="3"/><path d="M226 181L235 190L251 171" fill="none" stroke="#f6e9cb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`
+];
+let artworkSequence=0;
+function thumb(product,label='Product preview'){
+ const p=typeof product==='object'?product:null,c=p?p.color:product,alt=p?p.name:label;
+ const tones=['#eee9df','#e5edf0','#f1eee5','#e9ece8','#eef0ec'];
+ const uid='product-art-'+artworkSequence++,scene=(p?ART[p.id]:`<path d="M120 205Q180 219 240 205L229 244Q180 260 131 244Z" fill="url(#${uid})" stroke="#765442" stroke-width="3"/><ellipse cx="180" cy="205" rx="60" ry="12" fill="#e0b08c"/>`).replaceAll('url(#item)','url(#'+uid+')').replaceAll('url(#board8)','url(#'+uid+'-board)').replaceAll('id="board8"','id="'+uid+'-board"');
+ const bg=tones[p?p.cat==='Home Decor'?0:p.cat==='Desk & Office'?1:p.cat==='Toys & Games'?2:p.cat==='Miniatures'?3:4:0];
+ return `<svg viewBox="0 0 360 300" role="img" aria-label="${alt}"><defs><linearGradient id="${uid}" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${c}"/><stop offset="1" stop-color="${c}" stop-opacity=".68"/></linearGradient><linearGradient id="${uid}-surface" x2="0" y2="1"><stop stop-color="${bg}"/><stop offset="1" stop-color="#fff" stop-opacity=".55"/></linearGradient><filter id="${uid}-shade" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="8"/></filter></defs><rect width="360" height="300" rx="18" fill="url(#${uid}-surface)"/><circle cx="286" cy="59" r="30" fill="#fff" opacity=".4"/><ellipse cx="180" cy="251" rx="98" ry="12" fill="#65716e" opacity=".22" filter="url(#${uid}-shade)"/><g>${scene}</g></svg>`;
+}
 
 /* ---------- SHOP ---------- */
 const cats=['All',...new Set(P.map(p=>p.cat))];let F={cat:'All',q:'',sort:'f',max:100,stock:false};
@@ -416,7 +422,7 @@ function renderShop(){
  $('#grid').innerHTML=l.map((p,i)=>`<article class="card glass" style="animation-delay:${i*40}ms" data-id="${p.id}">
  ${p.isNew?'<span class="tag">New</span>':''}${p.sale?`<span class="tag s" style="${p.isNew?'':'top:1.2rem'}">Sale</span>`:''}
  <button class="heart${wish.has(p.id)?' on':''}" aria-label="Save ${p.name} to wishlist" aria-pressed="${wish.has(p.id)}">${wish.has(p.id)?'♥':'♡'}</button>
- <div class="th" data-open="${p.id}" tabindex="0" role="button" aria-label="Quick view ${p.name}">${thumb(p.color,p.name)}</div>
+ <div class="th" data-open="${p.id}" tabindex="0" role="button" aria-label="Quick view ${p.name}">${thumb(p)}</div>
  <h3>${p.name}</h3><p>${p.desc}</p><div class="stars" aria-label="${p.rating} out of 5">${stars(p.rating)} <small style="color:var(--mut)">${p.rating}</small></div>
  <div class="row"><div class="price">${p.sale?`<s>${money(p.price*1.25)}</s> `:''}${money(p.price)}</div><div class="sw">${COLORS.slice(0,3).map(c=>`<i style="background:${c}" data-sw="${c}" class="${c===p.color?'on':''}" aria-label="Color ${c}"></i>`).join('')}</div></div>
  <button class="btn p" style="width:100%;justify-content:center;margin-top:.8rem" data-add="${p.id}" ${p.stock?'':'disabled'}>${p.stock?'Add to cart':'Sold out'}</button></article>`).join('');
@@ -424,11 +430,9 @@ function renderShop(){
 function selectCategory(category){
  F.cat=category;
  $$('#pills .pill').forEach(x=>x.classList.toggle('on',x.dataset.c===category));
- $$('#category-artwork [data-category]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.category===category)));
  renderShop();
 }
 $('#pills').addEventListener('click',e=>{const b=e.target.closest('.pill');if(b)selectCategory(b.dataset.c)});
-$('#category-artwork').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(b)selectCategory(b.dataset.category)});
 $('#q').addEventListener('input',debounce(e=>{F.q=e.target.value.trim().toLowerCase();renderShop()}));
 $('#sort').onchange=e=>{F.sort=e.target.value;renderShop()};
 $('#pr').oninput=e=>{F.max=+e.target.value;$('#pv').textContent=F.max;renderShop()};
@@ -437,7 +441,7 @@ $('#sbtn').onclick=()=>{location.hash='#shop';setTimeout(()=>$('#q').focus(),400
 $('#grid').addEventListener('click',e=>{
  const card=e.target.closest('.card');if(!card)return;const p=byId(+card.dataset.id);
  if(e.target.closest('.heart')){wish.has(p.id)?wish.delete(p.id):wish.add(p.id);store.set('lay_wish',[...wish]);toast(wish.has(p.id)?'Saved to wishlist ♥':'Removed from wishlist');renderShop();return}
- if(e.target.dataset.sw){p.color=e.target.dataset.sw;$('.th',card).innerHTML=thumb(p.color,p.name);$$('.sw i',card).forEach(i=>i.classList.toggle('on',i===e.target));return}
+ if(e.target.dataset.sw){p.color=e.target.dataset.sw;$('.th',card).innerHTML=thumb(p);$$('.sw i',card).forEach(i=>i.classList.toggle('on',i===e.target));return}
  if(e.target.closest('[data-add]')){addCart(p.id,'PLA',p.color,'M',1);fly(e.target);return}
  if(e.target.closest('[data-open]'))openProduct(p.id)});
 $('#grid').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.open){e.preventDefault();openProduct(+e.target.dataset.open)}});
@@ -453,7 +457,7 @@ function addCart(id,mat,color,size,qty){const k=cart.find(i=>i.id===id&&i.mat===
 function saveCart(){store.set('lay_cart',cart);renderCart()}
 function renderCart(){
  const t=totals();$('#badge').textContent=cart.reduce((s,i)=>s+i.qty,0);
- $('#items').innerHTML=cart.length?cart.map((i,n)=>`<div class="ci">${thumb(i.color)}<div><b>${byId(i.id).name}</b><br><small>${i.mat} · ${i.size} · ${money(unit(i))}</small><div class="qty" style="margin-top:.3rem"><button data-q="${n}" data-d="-1" aria-label="Decrease">−</button>${i.qty}<button data-q="${n}" data-d="1" aria-label="Increase">+</button></div></div><button class="ib" data-rm="${n}" aria-label="Remove ${byId(i.id).name}">🗑</button></div>`).join(''):'<p class="sub">Your cart is empty. Time to print something.</p>';
+ $('#items').innerHTML=cart.length?cart.map((i,n)=>`<div class="ci">${thumb(byId(i.id))}<div><b>${byId(i.id).name}</b><br><small>${i.mat} · ${i.size} · ${money(unit(i))}</small><div class="qty" style="margin-top:.3rem"><button data-q="${n}" data-d="-1" aria-label="Decrease">−</button>${i.qty}<button data-q="${n}" data-d="1" aria-label="Increase">+</button></div></div><button class="ib" data-rm="${n}" aria-label="Remove ${byId(i.id).name}">🗑</button></div>`).join(''):'<p class="sub">Your cart is empty. Time to print something.</p>';
  const left=Math.max(0,50-t.sub);$('#ship').textContent=left>0&&cart.length?`Add ${money(left)} more for free shipping`:cart.length?'🎉 You unlocked free shipping':'Free shipping on orders over $50';$('#shipb').style.width=Math.min(100,t.sub/50*100)+'%';
  $('#sum').innerHTML=`<div><span>Subtotal</span><span>${money(t.sub)}</span></div>${promo?`<div style="color:#34d399"><span>PRINT10 (−10%)</span><span>−${money(t.disc)}</span></div>`:''}<div><span>Shipping</span><span>${t.ship?money(t.ship):'Free'}</span></div><div><span>Est. tax (8%)</span><span>${money(t.tax)}</span></div><div class="t"><span>Total</span><span>${money(t.total)}</span></div>`;
  $('#co').disabled=!cart.length;
@@ -545,7 +549,6 @@ $('#rf').onsubmit=e=>{e.preventDefault();const n=$('#rn').value.trim(),t=$('#rt'
 $('#nf').onsubmit=e=>{e.preventDefault();const v=$('#ne').value.trim();if(!/^\S+@\S+\.\S+$/.test(v)){$('#nerr').textContent='Please enter a valid email address.';return}$('#nerr').textContent='';$('.nl').innerHTML=`<svg class="ok" viewBox="0 0 100 100" aria-label="Success"><circle cx="50" cy="50" r="44"/><path d="M30 52l14 14 27-30"/></svg><h2>You’re in!</h2><p class="sub" style="margin-inline:auto">Use code <b>PRINT10</b> at checkout for 10% off.</p>`};
 
 /* ---------- POLISH ---------- */
-$('#mq').innerHTML=[...Array(2)].map(()=>['PLA','PETG','Resin','Nylon','TPU','Carbon Fiber','Silk PLA'].map(m=>`<span>${m}</span><span>✦</span>`).join('')).join('');
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});$$('.rv').forEach(x=>io.observe(x));
 const cio=new IntersectionObserver(es=>es.forEach(x=>{if(!x.isIntersecting)return;cio.unobserve(x.target);const el=x.target,to=+el.dataset.count,dec=+el.dataset.dec||0,t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/1600);el.textContent=(to*(1-Math.pow(1-k,3))).toLocaleString(undefined,{minimumFractionDigits:dec,maximumFractionDigits:dec});k<1&&requestAnimationFrame(f)})(t0)}));$$('[data-count]').forEach(x=>cio.observe(x));
 addEventListener('scroll',()=>{const h=document.documentElement;$('#prog').style.width=scrollY/(h.scrollHeight-innerHeight)*100+'%';$('#top').classList.toggle('on',scrollY>700)},{passive:true});
@@ -553,12 +556,12 @@ $('#top').onclick=()=>scrollTo({top:0});
 if(matchMedia('(pointer:fine)').matches){addEventListener('pointermove',e=>{const g=$('#glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
  if(!reduce)$$('[data-mag]').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.3}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')})}
 const setTheme=t=>{document.documentElement.dataset.theme=t;store.set('lay_theme',t)};
-setTheme(store.get('lay_theme',matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'));
+setTheme(store.get('lay_theme','light'));
 $('#theme').onclick=()=>{const T=['dark','light','neon'];setTheme(T[(T.indexOf(document.documentElement.dataset.theme)+1)%3])};
 $('#yr').textContent=new Date().getFullYear();
 new IntersectionObserver(([e])=>e.isIntersecting&&$('#steps').classList.add('in'),{threshold:.3}).observe($('#steps'));
 
-renderShop();renderCart();quote();heroScene();
+renderShop();renderCart();quote();
 addEventListener('load',()=>setTimeout(()=>$('#intro').classList.add('off'),350));
 setTimeout(()=>$('#intro').classList.add('off'),2500);
 })();
@@ -584,9 +587,10 @@ const TI=[['Bronze',0,'Early-drop alerts'],['Silver',200,'Unlocks PRINT10 (10% o
 const tier=()=>{let i=0;TI.forEach((t,k)=>{if(st.p>=t[1])i=k});return i},save=()=>S.set('lay_pts',st);
 const pb=document.createElement('button');pb.className='ib nb';pb.setAttribute('aria-label','Print Points and rewards');
 const sb=document.createElement('button');sb.className='ib';
-const sbu=()=>{sb.textContent=snd?'🔊':'🔇';sb.setAttribute('aria-label',snd?'Mute sound effects':'Turn on sound effects');sb.setAttribute('aria-pressed',snd)};sbu();
-$('#cbtn').before(pb,sb);
-const upd=()=>{pb.innerHTML='⭐ <b>'+st.p+'</b>'};upd();
+const sbu=()=>{sb.textContent=snd?'Sound on':'Sound off';sb.setAttribute('aria-label',snd?'Mute sound effects':'Turn on sound effects');sb.setAttribute('aria-pressed',snd)};sbu();
+pb.classList.add('btn');sb.classList.add('btn');
+$('#utility-links').append(pb,sb);
+const upd=()=>{pb.textContent='Rewards · '+st.p+' points'};upd();
 function award(n,why){if(st.dbl>0){n*=2;st.dbl--}st.p+=n;save();upd();pb.classList.remove('bump');void pb.offsetWidth;pb.classList.add('bump');toast('+'+n+' Print Points'+(why?' · '+why:''));beep(660,.1)}
 function ach(id,t,d){if(st.ach.includes(id))return;st.ach.push(id);save();toast('🏆 '+t+': '+d);beep(880,.2);vib([30,40,30]);award(25)}
 sb.onclick=()=>{snd=!snd;S.set('lay_snd',snd);sbu();beep(700,.1)};
@@ -596,7 +600,6 @@ document.addEventListener('click',e=>{
 },true);
 $('#rf').addEventListener('submit',()=>setTimeout(()=>{if(!$('#re').textContent){award(20,'Review');ach('voice','Critic','left a review')}},0));
 $('#qs').addEventListener('click',()=>setTimeout(()=>{if(!$('#qe').textContent){award(30,'Custom print');ach('creator','Creator','used the Custom Print Studio')}},0));
-const hr=new Date().getHours();if(hr>=22||hr<5)setTimeout(()=>ach('owl','Night Owl','shopping after dark'),4000);
 
 /* ---- Rewards + Spin wheel ---- */
 const PR=[['+25',25,0,30],['+50',50,0,25],['PRINT10',0,1,10],['+100',100,0,5],['2× pts',0,2,15],['+10',10,0,15]];
